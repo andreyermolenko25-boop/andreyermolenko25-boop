@@ -1,5 +1,5 @@
 <h2 align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Znak_graficzny_AGH.svg/120px-Znak_graficzny_AGH.svg.png" alt="AGH" height="40" align="center"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Znak_graficzny_Akademii_G%C3%B3rniczo-Hutniczej_im._Stanis%C5%82awa_Staszica_w_Krakowie.jpg/120px-Znak_graficzny_Akademii_G%C3%B3rniczo-Hutniczej_im._Stanis%C5%82awa_Staszica_w_Krakowie.jpg" alt="AGH" height="64" align="center"/>
   &nbsp;Student at AGH University of Kraków
 </h2>
 
