@@ -12,18 +12,38 @@
 
 ### 🧠 Languages
 
-<p>
-  <img src="https://skillicons.dev/icons?i=py,ts,js,html,css,postgres,bash,powershell" alt="Languages"/>
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=py" title="Python" alt="Python" height="48"/>
+  <img src="https://skillicons.dev/icons?i=ts" title="TypeScript" alt="TypeScript" height="48"/>
+  <img src="https://skillicons.dev/icons?i=js" title="JavaScript" alt="JavaScript" height="48"/>
+  <img src="https://skillicons.dev/icons?i=html" title="HTML5" alt="HTML5" height="48"/>
+  <img src="https://skillicons.dev/icons?i=css" title="CSS3" alt="CSS3" height="48"/>
+  <img src="https://skillicons.dev/icons?i=postgres" title="PostgreSQL" alt="PostgreSQL" height="48"/>
+  <img src="https://skillicons.dev/icons?i=bash" title="Bash" alt="Bash" height="48"/>
+  <img src="https://skillicons.dev/icons?i=powershell" title="PowerShell" alt="PowerShell" height="48"/>
 </p>
 
 ### ⚛️ Frameworks & libraries
 
-<p>
-  <img src="https://skillicons.dev/icons?i=fastapi,nextjs,react,nodejs,tailwind,threejs" alt="Frameworks"/>
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=fastapi" title="FastAPI" alt="FastAPI" height="48"/>
+  <img src="https://skillicons.dev/icons?i=nextjs" title="Next.js" alt="Next.js" height="48"/>
+  <img src="https://skillicons.dev/icons?i=react" title="React" alt="React" height="48"/>
+  <img src="https://skillicons.dev/icons?i=nodejs" title="Node.js" alt="Node.js" height="48"/>
+  <img src="https://skillicons.dev/icons?i=tailwind" title="Tailwind CSS" alt="Tailwind CSS" height="48"/>
+  <img src="https://skillicons.dev/icons?i=threejs" title="Three.js" alt="Three.js" height="48"/>
 </p>
 
 ### 🔧 Tools & infrastructure
 
-<p>
-  <img src="https://skillicons.dev/icons?i=docker,azure,linux,git,github,githubactions,vscode,npm,md" alt="Tools"/>
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=docker" title="Docker" alt="Docker" height="48"/>
+  <img src="https://skillicons.dev/icons?i=azure" title="Azure" alt="Azure" height="48"/>
+  <img src="https://skillicons.dev/icons?i=linux" title="Linux" alt="Linux" height="48"/>
+  <img src="https://skillicons.dev/icons?i=git" title="Git" alt="Git" height="48"/>
+  <img src="https://skillicons.dev/icons?i=github" title="GitHub" alt="GitHub" height="48"/>
+  <img src="https://skillicons.dev/icons?i=githubactions" title="GitHub Actions" alt="GitHub Actions" height="48"/>
+  <img src="https://skillicons.dev/icons?i=vscode" title="VS Code" alt="VS Code" height="48"/>
+  <img src="https://skillicons.dev/icons?i=npm" title="npm" alt="npm" height="48"/>
+  <img src="https://skillicons.dev/icons?i=md" title="Markdown" alt="Markdown" height="48"/>
 </p>
