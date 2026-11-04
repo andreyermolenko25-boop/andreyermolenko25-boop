@@ -4,11 +4,28 @@
 </h2>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/andreyyermolenko/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-  <a href="https://github.com/andreyermolenko25-boop"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1200&color=6E7681&center=true&vCenter=true&width=560&lines=Production+Management+%E2%86%92+Software;Python+%C2%B7+FastAPI+%C2%B7+PostgreSQL+%C2%B7+Next.js;Scheduling%2C+OEE+and+shop-floor+data" alt="Production Management → Software"/>
+</p>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/andreyyermolenko/"><img src="https://img.shields.io/badge/LinkedIn-andreyyermolenko-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="https://www.instagram.com/andrey.hrk/"><img src="https://img.shields.io/badge/Instagram-andrey.hrk-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"/></a>
+  <a href="https://github.com/andreyermolenko25-boop"><img src="https://img.shields.io/badge/GitHub-andreyermolenko25--boop-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=andreyermolenko25-boop&style=flat-square&color=6E7681&label=profile+views" alt="Profile views"/>
 </p>
 
 ---
+
+### 📌 Featured projects
+
+| Project | What it does | Stack |
+|---|---|---|
+| [**jobshop-scheduler**](https://github.com/andreyermolenko25-boop/jobshop-scheduler) | Flexible job-shop scheduling: CP-SAT optimiser vs. dispatching rules, KPIs, Gantt charts | Python · OR-Tools · CLI |
+| [**shopfloor-oee**](https://github.com/andreyermolenko25-boop/shopfloor-oee) | OEE monitoring service with downtime Pareto, trends and a dashboard | FastAPI · PostgreSQL · Docker |
+| [**lemko-crm-showcase**](https://github.com/andreyermolenko25-boop/lemko-crm-showcase) | Modular multi-tenant CRM, core edition | FastAPI · PostgreSQL · Next.js |
 
 ### 🧠 Languages
 
