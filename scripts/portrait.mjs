@@ -1,6 +1,6 @@
-// Gray PNG -> pixel portrait: one hex digit (0 = dark .. f = light) per cell.
-// Make the PNG first (crop to the head with the ears), e.g.:
-//   ffmpeg -i avatar.jpg -vf "crop=330:330:65:125,scale=80:80:flags=area,format=gray" -c:v png face.png
+// PNG -> colour pixel portrait: one hex colour per cell.
+// Make the PNG first (head with the ears, centred), e.g.:
+//   ffmpeg -i avatar.jpg -vf "crop=300:300:55:135,scale=64:64:flags=area,format=rgb24" -c:v png face.png
 // Usage: node scripts/portrait.mjs face.png > assets/portrait.txt
 import { readFileSync } from "node:fs";
 import { inflateSync } from "node:zlib";
@@ -29,21 +29,15 @@ for (let y = 0; y < H; y++) {
     px[y * stride + x] = v & 255;
   }
 }
-const g = [];
-for (let i = 0; i < W * H; i++) g.push(px[i * bpp]);
-const sorted = [...g].sort((a, b) => a - b);
-const lo = sorted[Math.floor(g.length * 0.02)], hi = sorted[Math.floor(g.length * 0.98)];
+// one 6-digit hex colour per cell, rows of W cells
 const lines = [];
 for (let y = 0; y < H; y++) {
-  let s = "";
+  let row = "";
   for (let x = 0; x < W; x++) {
-    let v = Math.min(1, Math.max(0, (g[y * W + x] - lo) / (hi - lo || 1)));
-    // dim the background around the head (ellipse that also covers the ears)
-    const dx = (x - W * 0.5) / (W * 0.4), dy = (y - H * 0.56) / (H * 0.52);
-    const d = Math.sqrt(dx * dx + dy * dy);
-    if (d > 0.85) v *= Math.max(0.12, 1 - (d - 0.85) / 0.3);
-    s += Math.round(v * 15).toString(16);
+    const o = (y * W + x) * bpp;
+    const rgb = bpp >= 3 ? [px[o], px[o + 1], px[o + 2]] : [px[o], px[o], px[o]];
+    row += rgb.map((v) => v.toString(16).padStart(2, "0")).join("");
   }
-  lines.push(s);
+  lines.push(row);
 }
 console.log(lines.join("\n"));
