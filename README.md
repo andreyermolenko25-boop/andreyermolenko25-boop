@@ -8,17 +8,15 @@
   <a href="https://github.com/andreyermolenko25-boop"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
 </p>
 
-<p align="center">
-  <img src="assets/contributions.svg" alt="Contributions in the last year" width="100%"/>
-</p>
-<p align="center">
-  <img src="assets/whoami.svg" alt="whoami: pixel portrait, streaks and monthly activity" width="100%"/>
-</p>
-<p align="center">
-  <img src="assets/achievements.svg" alt="Achievements earned from contribution data" width="100%"/>
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/profile-dark.svg">
+  <img src="assets/profile-light.svg" alt="Pixel portrait, streaks and monthly activity" width="100%">
+</picture>
 
-<sub align="center">Cards are rebuilt every day by <a href=".github/workflows/cards.yml">a GitHub Action</a> from the GitHub API.</sub>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg">
+  <img src="assets/activity-light.svg" alt="Contributions in the last year" width="100%">
+</picture>
 
 ---
 
