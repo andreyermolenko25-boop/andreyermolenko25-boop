@@ -1,7 +1,7 @@
 <h2 align="center">
   <img src="assets/agh.jpg" alt="AGH" height="64" align="center"/>
   &nbsp;Student at AGH University of Kraków
-  &nbsp;<img src="assets/dancing-dog.gif" alt="Dancing dog" height="64" align="center"/>
+  &nbsp;<img src="assets/dancing-dog.gif" alt="Dancing dog" height="96" align="center"/>
 </h2>
 
 <p align="center">
