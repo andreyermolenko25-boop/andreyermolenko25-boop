@@ -1,11 +1,3 @@
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:1f6feb&height=180&section=header&text=Andrii%20Yermolenko&fontColor=ffffff&fontSize=42&fontAlignY=35" alt="Andrii Yermolenko" width="100%"/>
-</p>
-
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=500&lines=Full-stack+developer;Building+Lemko+CRM;Student+%40+AGH+Krak%C3%B3w" alt="Typing intro"/>
-</p>
-
 <h2 align="center">
   <img src="assets/agh.jpg" alt="AGH" height="64" align="center"/>
   &nbsp;Student at AGH University of Kraków
