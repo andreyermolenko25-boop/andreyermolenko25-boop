@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:1f6feb&height=180&section=header&text=Andrii%20Yermolenko&fontColor=ffffff&fontSize=42&fontAlignY=35" alt="Andrii Yermolenko" width="100%"/>
+</p>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=500&lines=Full-stack+developer;Building+Lemko+CRM;Student+%40+AGH+Krak%C3%B3w" alt="Typing intro"/>
+</p>
+
 <h2 align="center">
   <img src="assets/agh.jpg" alt="AGH" height="64" align="center"/>
   &nbsp;Student at AGH University of Kraków
@@ -30,7 +38,9 @@
   <img src="https://skillicons.dev/icons?i=css" title="CSS3" alt="CSS3" height="48"/>
   <img src="https://skillicons.dev/icons?i=postgres" title="PostgreSQL" alt="PostgreSQL" height="48"/>
   <img src="https://skillicons.dev/icons?i=bash" title="Bash" alt="Bash" height="48"/>
+  <img src="https://skillicons.dev/icons?i=powershell" title="PowerShell" alt="PowerShell" height="48"/>
   <img src="https://skillicons.dev/icons?i=linux" title="Linux" alt="Linux" height="48"/>
+  <img src="https://skillicons.dev/icons?i=ubuntu" title="Ubuntu" alt="Ubuntu" height="48"/>
 </p>
 
 ### ⚛️ Frameworks & libraries
@@ -40,19 +50,48 @@
   <img src="https://skillicons.dev/icons?i=nextjs" title="Next.js" alt="Next.js" height="48"/>
   <img src="https://skillicons.dev/icons?i=react" title="React" alt="React" height="48"/>
   <img src="https://skillicons.dev/icons?i=nodejs" title="Node.js" alt="Node.js" height="48"/>
+  <img src="https://skillicons.dev/icons?i=express" title="Express" alt="Express" height="48"/>
+  <img src="https://skillicons.dev/icons?i=prisma" title="Prisma" alt="Prisma" height="48"/>
+  <img src="https://skillicons.dev/icons?i=graphql" title="GraphQL" alt="GraphQL" height="48"/>
   <img src="https://skillicons.dev/icons?i=tailwind" title="Tailwind CSS" alt="Tailwind CSS" height="48"/>
   <img src="https://skillicons.dev/icons?i=threejs" title="Three.js" alt="Three.js" height="48"/>
+  <img src="https://skillicons.dev/icons?i=vite" title="Vite" alt="Vite" height="48"/>
+  <img src="https://skillicons.dev/icons?i=jest" title="Jest" alt="Jest" height="48"/>
+</p>
+
+### 🗄️ Databases & cloud
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=redis" title="Redis" alt="Redis" height="48"/>
+  <img src="https://skillicons.dev/icons?i=sqlite" title="SQLite" alt="SQLite" height="48"/>
+  <img src="https://skillicons.dev/icons?i=mongodb" title="MongoDB" alt="MongoDB" height="48"/>
+  <img src="https://skillicons.dev/icons?i=supabase" title="Supabase" alt="Supabase" height="48"/>
+  <img src="https://skillicons.dev/icons?i=nginx" title="Nginx" alt="Nginx" height="48"/>
+  <img src="https://skillicons.dev/icons?i=vercel" title="Vercel" alt="Vercel" height="48"/>
+  <img src="https://skillicons.dev/icons?i=cloudflare" title="Cloudflare" alt="Cloudflare" height="48"/>
+  <img src="https://skillicons.dev/icons?i=aws" title="AWS" alt="AWS" height="48"/>
+  <img src="https://skillicons.dev/icons?i=gcp" title="Google Cloud" alt="Google Cloud" height="48"/>
+  <img src="https://skillicons.dev/icons?i=azure" title="Azure" alt="Azure" height="48"/>
 </p>
 
 ### 🔧 Tools & infrastructure
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=docker" title="Docker" alt="Docker" height="48"/>
-  <img src="https://skillicons.dev/icons?i=azure" title="Azure" alt="Azure" height="48"/>
   <img src="https://skillicons.dev/icons?i=git" title="Git" alt="Git" height="48"/>
   <img src="https://skillicons.dev/icons?i=github" title="GitHub" alt="GitHub" height="48"/>
   <img src="https://skillicons.dev/icons?i=githubactions" title="GitHub Actions" alt="GitHub Actions" height="48"/>
   <img src="https://skillicons.dev/icons?i=vscode" title="VS Code" alt="VS Code" height="48"/>
+  <img src="https://skillicons.dev/icons?i=pycharm" title="PyCharm" alt="PyCharm" height="48"/>
   <img src="https://skillicons.dev/icons?i=npm" title="npm" alt="npm" height="48"/>
+  <img src="https://skillicons.dev/icons?i=postman" title="Postman" alt="Postman" height="48"/>
+  <img src="https://skillicons.dev/icons?i=figma" title="Figma" alt="Figma" height="48"/>
+  <img src="https://skillicons.dev/icons?i=notion" title="Notion" alt="Notion" height="48"/>
   <img src="https://skillicons.dev/icons?i=md" title="Markdown" alt="Markdown" height="48"/>
+</p>
+
+---
+
+<p align="center">
+  <img src="assets/dancing-dog.gif" alt="Dancing dog" width="160"/>
 </p>
