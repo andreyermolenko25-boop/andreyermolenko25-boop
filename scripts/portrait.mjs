@@ -1,11 +1,15 @@
-// PNG -> grey pixel portrait of the head and ears only (background cut out).
-// Make the PNG first (head with the ears, centred), e.g.:
-//   ffmpeg -i avatar.jpg -vf "crop=300:300:55:135,scale=64:64:flags=area,format=rgb24" -c:v png face.png
-// Usage: node scripts/portrait.mjs face.png > assets/portrait.txt
+// PNG -> grey pixel portrait with the background cut out.
+// The background is everything light-and-grey (or bluish) that is connected to the image edge
+// (flood fill), so it works for photos shot on a plain light backdrop.
+// Make the PNG first, e.g. (the smoking-cat meme):
+//   ffmpeg -i cat.jpg -vf "crop=404:300:108:70,format=rgb24" -c:v png cat.png
+// Usage: node scripts/portrait.mjs cat.png [cols=64] > assets/portrait.txt
+// Output: one line per row, 2 hex digits of grey per cell, "--" = background.
 import { readFileSync } from "node:fs";
 import { inflateSync } from "node:zlib";
 
 const buf = readFileSync(process.argv[2]);
+const COLS = +(process.argv[3] || 64);
 let p = 8, W = 0, H = 0, ct = 0;
 const idat = [];
 while (p < buf.length) {
@@ -29,32 +33,52 @@ for (let y = 0; y < H; y++) {
     px[y * stride + x] = v & 255;
   }
 }
-// Outline of the head with the cat ears, in 0..600 units of the 300x300 crop (traced by hand).
-const OUTLINE = [[105,55],[160,72],[205,80],[245,55],[300,42],[360,45],[420,72],[470,95],[540,75],[548,130],[535,190],[515,220],
-  [505,270],[505,330],[500,400],[490,440],[470,490],[440,540],[420,600],[230,600],[180,540],[140,490],[110,430],[95,380],
-  [100,310],[110,260],[122,205],[110,150],[100,90]].map(([x, y]) => [x / 600, y / 600]);
-const inside = (x, y) => {
-  let ins = false;
-  for (let i = 0, j = OUTLINE.length - 1; i < OUTLINE.length; j = i++) {
-    const [xi, yi] = OUTLINE[i], [xj, yj] = OUTLINE[j];
-    if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) ins = !ins;
-  }
-  return ins;
+const rgb = (i) => (bpp >= 3 ? [px[i * bpp], px[i * bpp + 1], px[i * bpp + 2]] : [px[i * bpp], px[i * bpp], px[i * bpp]]);
+const lum = ([r, g, b]) => 0.2126 * r + 0.7152 * g + 0.0722 * b;
+const looksLikeBackground = (i) => {
+  const [r, g, b] = rgb(i), sat = Math.max(r, g, b) - Math.min(r, g, b);
+  return (sat < 34 && lum([r, g, b]) > 150) || b > r + 12;
 };
 
-// grey level per cell (2 hex digits), "--" = background (not drawn)
-const lum = (o) => (bpp >= 3 ? 0.2126 * px[o] + 0.7152 * px[o + 1] + 0.0722 * px[o + 2] : px[o]);
-const vals = [];
-for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (inside((x + 0.5) / W, (y + 0.5) / H)) vals.push(lum((y * W + x) * bpp));
+// flood fill the background from every edge pixel
+const bg = new Uint8Array(W * H);
+const stack = [];
+for (let x = 0; x < W; x++) stack.push(x, (H - 1) * W + x);
+for (let y = 0; y < H; y++) stack.push(y * W, y * W + W - 1);
+while (stack.length) {
+  const i = stack.pop();
+  if (bg[i] || !looksLikeBackground(i)) continue;
+  bg[i] = 1;
+  const x = i % W, y = (i / W) | 0;
+  if (x > 0) stack.push(i - 1);
+  if (x < W - 1) stack.push(i + 1);
+  if (y > 0) stack.push(i - W);
+  if (y < H - 1) stack.push(i + W);
+}
+
+// downsample: a cell is drawn when most of it is foreground
+const cw = W / COLS, ROWS = Math.round(H / cw);
+const cells = [], vals = [];
+for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) {
+  let n = 0, fg = 0, sum = 0;
+  for (let y = Math.floor(r * cw); y < Math.min(H, Math.floor((r + 1) * cw)); y++)
+    for (let x = Math.floor(c * cw); x < Math.min(W, Math.floor((c + 1) * cw)); x++) {
+      n++;
+      const i = y * W + x;
+      if (!bg[i]) { fg++; sum += lum(rgb(i)); }
+    }
+  const v = fg > n * 0.5 ? sum / fg : null;
+  cells.push(v);
+  if (v !== null) vals.push(v);
+}
 vals.sort((a, b) => a - b);
 const lo = vals[Math.floor(vals.length * 0.01)], hi = vals[Math.floor(vals.length * 0.99)];
 const lines = [];
-for (let y = 0; y < H; y++) {
+for (let r = 0; r < ROWS; r++) {
   let row = "";
-  for (let x = 0; x < W; x++) {
-    if (!inside((x + 0.5) / W, (y + 0.5) / H)) { row += "--"; continue; }
-    const v = Math.min(1, Math.max(0, (lum((y * W + x) * bpp) - lo) / (hi - lo || 1)));
-    row += Math.round(v * 255).toString(16).padStart(2, "0");
+  for (let c = 0; c < COLS; c++) {
+    const v = cells[r * COLS + c];
+    row += v === null ? "--" : Math.round(Math.min(1, Math.max(0, (v - lo) / (hi - lo || 1))) * 255).toString(16).padStart(2, "0");
   }
   lines.push(row);
 }

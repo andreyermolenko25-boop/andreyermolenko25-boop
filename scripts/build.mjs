@@ -137,14 +137,15 @@ ${legend}`;
 
   // ---- card 2: pixel portrait + stats + months + languages ---------------
   {
-    // portrait: grey head + ears only, in a square frame; squares are drawn
+    // portrait (assets/portrait.txt): grey, background cut out, in a square frame; squares are drawn
     // one by one from the top, left to right, like a printer
-    const N = portraitRows.length, D = 280, cs = D / N, ox = 28, oy = 28;
+    const COLS = portraitRows[0].length / 2, ROWS = portraitRows.length, D = 280, ox = 28, oy = 28;
+    const cs = D / Math.max(COLS, ROWS), px0 = ox + (D - COLS * cs) / 2, py0 = oy + (D - ROWS * cs) / 2;
     let art = `<rect x="${ox - 6}" y="${oy - 6}" width="${D + 12}" height="${D + 12}" rx="8" fill="${t.tile}" stroke="${t.line}"/>
-<g transform="translate(${ox} ${oy}) scale(${cs})">`;
+<g transform="translate(${px0} ${py0}) scale(${cs})">`;
     let n = 0;
     portraitRows.forEach((row, y) => {
-      for (let x = 0; x < N; x++) {
+      for (let x = 0; x < COLS; x++) {
         const v = row.slice(x * 2, x * 2 + 2);
         if (v === "--") continue;
         art += `<rect x="${x}" y="${y}" width=".9" height=".9" fill="#${v}${v}${v}" class="dot" style="animation-delay:${(0.2 + n++ * 0.0012).toFixed(4)}s"/>`;
