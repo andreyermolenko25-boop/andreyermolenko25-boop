@@ -1,6 +1,7 @@
 <h2 align="center">
   <img src="assets/agh.jpg" alt="AGH" height="64" align="center"/>
   &nbsp;Student at AGH University of Kraków
+  &nbsp;<img src="assets/dancing-dog.gif" alt="Dancing dog" height="64" align="center"/>
 </h2>
 
 <p align="center">
@@ -80,10 +81,4 @@
   <img src="assets/linear.svg" title="Linear" alt="Linear" height="48"/>
   <img src="https://skillicons.dev/icons?i=notion" title="Notion" alt="Notion" height="48"/>
   <img src="https://skillicons.dev/icons?i=md" title="Markdown" alt="Markdown" height="48"/>
-</p>
-
----
-
-<p align="center">
-  <img src="assets/dancing-dog.gif" alt="Dancing dog" width="160"/>
 </p>
