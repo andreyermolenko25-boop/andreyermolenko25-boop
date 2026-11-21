@@ -88,7 +88,9 @@ const css = (t) => `
   @keyframes pop { from { opacity: 0; transform: scale(.2); } to { opacity: 1; transform: scale(1); } }
   .grow { transform: scaleY(0); animation: grow .8s cubic-bezier(.2,.8,.2,1) forwards; transform-box: fill-box; transform-origin: bottom; }
   @keyframes grow { to { transform: scaleY(1); } }
-  @media (prefers-reduced-motion: reduce) { .fade, .pop, .grow { animation: none; opacity: 1; transform: none; } }
+  .dot { opacity: 0; animation: dot .18s ease-out forwards; }
+  @keyframes dot { to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .fade, .pop, .grow, .dot { animation: none; opacity: 1; transform: none; } }
 `;
 
 const card = (t, h, label, body) => `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${h}" viewBox="0 0 ${W} ${h}" role="img" aria-label="${esc(label)}">
@@ -135,21 +137,19 @@ ${legend}`;
 
   // ---- card 2: pixel portrait + stats + months + languages ---------------
   {
-    // portrait: real colours, round, cells appear in a diagonal sweep
-    const N = portraitRows.length, D = 280, cs = D / N, ox = 28, oy = 28, r = N / 2;
-    const groups = new Map();
+    // portrait: grey head + ears only, in a square frame; squares are drawn
+    // one by one from the top, left to right, like a printer
+    const N = portraitRows.length, D = 280, cs = D / N, ox = 28, oy = 28;
+    let art = `<rect x="${ox - 6}" y="${oy - 6}" width="${D + 12}" height="${D + 12}" rx="8" fill="${t.tile}" stroke="${t.line}"/>
+<g transform="translate(${ox} ${oy}) scale(${cs})">`;
+    let n = 0;
     portraitRows.forEach((row, y) => {
       for (let x = 0; x < N; x++) {
-        const dx = x + 0.5 - r, dy = y + 0.5 - r;
-        if (dx * dx + dy * dy > r * r) continue;
-        const k = x + y;
-        groups.set(k, (groups.get(k) || "") + `<rect x="${x}" y="${y}" width=".92" height=".92" fill="#${row.slice(x * 6, x * 6 + 6)}"/>`);
+        const v = row.slice(x * 2, x * 2 + 2);
+        if (v === "--") continue;
+        art += `<rect x="${x}" y="${y}" width=".9" height=".9" fill="#${v}${v}${v}" class="dot" style="animation-delay:${(0.2 + n++ * 0.0012).toFixed(4)}s"/>`;
       }
     });
-    let art = `<circle cx="${ox + D / 2}" cy="${oy + D / 2}" r="${D / 2 + 5}" fill="none" stroke="${t.ring}"/>
-<g transform="translate(${ox} ${oy}) scale(${cs})">`;
-    for (const [k, rects] of [...groups.entries()].sort((a, b) => a[0] - b[0]))
-      art += `<g class="pop" style="animation-delay:${(0.2 + k * 0.014).toFixed(3)}s">${rects}</g>`;
     art += `</g>`;
 
     // stats
