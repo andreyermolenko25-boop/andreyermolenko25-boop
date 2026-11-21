@@ -77,7 +77,7 @@
   <img src="https://skillicons.dev/icons?i=pycharm" title="PyCharm" alt="PyCharm" height="48"/>
   <img src="https://skillicons.dev/icons?i=npm" title="npm" alt="npm" height="48"/>
   <img src="https://skillicons.dev/icons?i=postman" title="Postman" alt="Postman" height="48"/>
-  <img src="https://skillicons.dev/icons?i=figma" title="Figma" alt="Figma" height="48"/>
+  <img src="assets/linear.svg" title="Linear" alt="Linear" height="48"/>
   <img src="https://skillicons.dev/icons?i=notion" title="Notion" alt="Notion" height="48"/>
   <img src="https://skillicons.dev/icons?i=md" title="Markdown" alt="Markdown" height="48"/>
 </p>
