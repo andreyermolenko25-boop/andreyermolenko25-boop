@@ -82,3 +82,9 @@
   <img src="https://skillicons.dev/icons?i=notion" title="Notion" alt="Notion" height="48"/>
   <img src="https://skillicons.dev/icons?i=md" title="Markdown" alt="Markdown" height="48"/>
 </p>
+
+<br/>
+
+<p align="center">
+  <img src="assets/smoking-cat.gif" alt="Cat with a cigarette and a beer" height="140"/>
+</p>
