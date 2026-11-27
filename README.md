@@ -86,5 +86,5 @@
 <br/>
 
 <p align="center">
-  <img src="assets/smoking-cat.gif" alt="Cat with a cigarette and a beer" height="140"/>
+  <img src="assets/smoking-cat.gif" alt="Cat with a cigarette and a beer" height="180"/>
 </p>
